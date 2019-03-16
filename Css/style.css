@@ -1,0 +1,130 @@
+.logo{
+	height:80px;
+	width:auto;
+    float:right;
+}
+.navbar-brand:hover{
+	border-bottom: 2px solid black;
+}
+.s{
+	color:black;
+}
+.gridmargin{
+	margin-top: 2%; 
+}
+.gridpad{
+	padding-right:1%
+}
+
+/*about'a tab oluşturma  */
+
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+.tab button:hover {
+    background-color:darkseagreen;
+}
+.tab button:active{
+    background-color: palegoldenrod;
+}
+.tab button.active{
+    background-color:darkseagreen;
+}
+.content {
+    display: none;
+    background-color:darkseagreen;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+
+/* DropDown button oluşturmak için */
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: relative;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    position: relative;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: inline;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+.dropdown-content a:hover{
+    font-size:20px;
+}
+
+/*Game skill bar*/
+
+.sccontainer {
+  width: 100%;
+  background-color: #ddd;
+}
+
+.skills {
+    margin-top: 25px;
+  text-align: right;
+  padding: 10px;
+  color: white;
+}
+
+.GRAPHIC{
+    width: 70%;
+    background-color: darkblue;
+}
+.up{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    position:static;
+}
+.s{
+    float:left;
+}
+.Story{
+    width: 80%;
+    background-color:brown;
+}
+.Reality{
+  
+    width: 90%;
+    background-color:forestgreen;
+}

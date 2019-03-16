@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<script
+		src="https://code.jquery.com/jquery-2.2.4.js"
+		integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+		crossorigin="anonymous"></script>
+
+    <title>Books</title>
+	<link rel="stylesheet" type="text/css" href="Css/style.css">
+	<link rel="stylesheet" type="text/css" href="Bootstrap\css\bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="Bootstrap\css\bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="Bootstrap\css\bootstrap-grid.css">
+	<link rel="stylesheet" type="text/css" href="Bootstrap\css\bootstrap-grid.min.css">
+	<link rel="stylesheet" type="text/css" href="Bootstrap\css\bootstrap-reboot.css">
+	<link rel="stylesheet" type="text/css" href="Bootstrap\css\bootstrap-reboot.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" src="Css/style.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+</head>
+<body>
+
+	<script>
+	
+		$(document).ready(function(){
+			setInterval(function(){
+			updataCar();
+			},10000);
+
+			
+			updateBook();
+			
+			function updateBook()
+			{
+				$.ajax({
+				url:'bookdisplay.php',
+				type:'POST',
+				success:function(display)
+				{
+
+					if(!display.error)
+					{
+						$('#result').html(display);		
+					}
+				}
+
+			});
+			}
+			
+
+			
+			$('#Search').keyup(function(){
+
+				var Search=$('#Search').val();
+				if(!$('#Search').val())
+				{
+					updateBook();
+					
+				}
+				else
+				{
+					$.ajax({
+					url:'booksearch.php',
+					data:{Search:Search},
+					type:'POST',
+					success:function(data)
+					{
+						if(!data.error)
+                        {
+                        	$('#result').html(data);
+							
+                     	}
+						
+					}
+				});
+
+				}
+				
+				
+
+				
+			});
+			
+
+			
+
+		});
+	</script>
+    <div class="container">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+   	 		<div class="navbar-nav">
+   	 			<a class="nav-item nav-link" href="home.html">Home </a>
+      			<a class="nav-item nav-link" href="about.html">About</a>
+      			<a class="nav-item nav-link" href="Form.html">Form</a>
+      			<a class="navbar-brand" href="books.html">Books</a>
+    		</div>
+  		</div>
+  			<img class="logo" src="logo.png">
+	</nav>
+	<h1 class="text-center">Book Store</h1>
+	<input type="text" class="col-md-4" id="Search">
+	<hr>
+	
+	<div class="row" id="result">
+
+	
+	
+
+		
+    </div>
+</body>
+</html>
